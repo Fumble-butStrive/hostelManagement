@@ -23,7 +23,7 @@ export class AdminService {
       }),
       catchError(err => {
         // console.log(`server error occured`, err);
-        const msg = 'Registration failed please contact to admin';
+        const msg = 'Registration failed please contact  admin';
         return of(msg);
       })
     );
