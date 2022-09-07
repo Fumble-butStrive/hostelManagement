@@ -146,7 +146,7 @@ export class StudentAddComponent implements OnInit {
 
   addStudent() {
     if(!this.studentDetails.valid) {
-      alert('Please Enter Valiad Value !');
+      alert('Please Enter Valiad Value addStudent !');
       return;
     }
     // console.log(this.studentDetails);

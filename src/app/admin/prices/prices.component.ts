@@ -46,7 +46,7 @@ export class PricesComponent implements OnInit {
 
   updatePriceDetails() {
     if(this.priceDetails.status == "INVALID") { 
-      alert('Please Enter Valiad Value !');
+      alert('Please Enter Valiad Value  updatePriceDetails !');
       return; 
     }
     const price = this.priceDetails.getRawValue();
