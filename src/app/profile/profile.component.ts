@@ -50,7 +50,7 @@ export class ProfileComponent implements OnInit {
 
   updateUserProfile() {   
     if(!this.userProfile.valid) {
-      alert('Please Enter Valiad Value userProfile !');
+      alert(JSON.stringify(this.userProfile.value));
       return;
     }
     const userProfileForm = this.userProfile.getRawValue();
@@ -71,9 +71,9 @@ export class ProfileComponent implements OnInit {
     // let fileExtension:string = oldFile.name.split('?')[0].split('.').pop();
     const name = this.user.username + ".jpg";
 
-    const file: File = new File([event.target.files[0]], name , {type: 'jpg'});
-
-    this.fileUploadForm.get('uploadedImage')!.setValue(file);
+    const file: File = new File([event.target.files[0]], name , {type:'image/jpeg'});
+    console.log(oldFile,file)
+    this.fileUploadForm.get('uploadedImage')!.setValue(oldFile);
   }
 
   onFormSubmit() {

@@ -40,10 +40,10 @@ export class StudentAddComponent implements OnInit {
     mobileNo: new FormControl('',[Validators.required]), //, Validators.pattern("[7-9]{1}[0-9]{9}")
     // fatherMobileNo: new FormControl('',[Validators.required]), //, Validators.pattern("[7-9]{1}[0-9]{9}")
     email: new FormControl('',[Validators.required, Validators.email]),
-    studentAdharCard: new FormControl('',[Validators.required]), //, Validators.pattern("[0-9]{12}")
+    studentAdharCard: new FormControl('',),   //[Validators.required] //, Validators.pattern("[0-9]{12}")
     // fatherAdharCard: new FormControl('',[Validators.required, Validators.pattern("[0-9]{12}")]),
-    currentAdress: new FormControl('',[Validators.required]),
-    collegeName: new FormControl('',[Validators.required])
+    currentAdress: new FormControl('',), //[Validators.required]
+    collegeName: new FormControl('',) //[Validators.required]
   });
 
   constructor(private router: Router, private adminService: AdminService) {
