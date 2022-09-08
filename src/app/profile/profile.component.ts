@@ -50,7 +50,7 @@ export class ProfileComponent implements OnInit {
 
   updateUserProfile() {   
     if(!this.userProfile.valid) {
-      alert('Please Enter Valiad Value userProfile !');
+      alert('Please Enter Valiad Value !');
       return;
     }
     const userProfileForm = this.userProfile.getRawValue();

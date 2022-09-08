@@ -38,7 +38,7 @@ export class ContactUsComponent implements OnInit {
 
   contactFormSubmit() {
     if(!this.contactFormGroup.valid) {
-      alert('Please Enter Valiad Value contactForm !');
+      alert('Please Enter Valiad Value !');
       return;
     }
     const contactForm = this.contactFormGroup.getRawValue();

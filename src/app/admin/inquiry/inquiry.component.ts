@@ -29,7 +29,7 @@ export class InquiryComponent implements OnInit {
   sendReplyMessage() {
     if(!this.replyMessageForm.valid) {
       console.log('Please enter a valid reply message');
-      alert('Please Enter Valiad Value sendReplyMessage !');
+      alert('Please Enter Valiad Value !');
       return;
     }
     const replyMsgForm = this.replyMessageForm.getRawValue();
