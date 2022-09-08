@@ -7,8 +7,8 @@ import { Component, OnInit } from '@angular/core';
 })
 export class FooterComponent implements OnInit {
 
-  email = "darshanparmar263@gmail.com";
-  userName = "darshankparmar";
+  email = "admin@gmail.com";
+  userName = "admin";
   
   constructor() { }
 
@@ -16,3 +16,6 @@ export class FooterComponent implements OnInit {
   }
 
 }
+
+// email = "darshanparmar263@gmail.com";
+// userName = "darshankparmar";
