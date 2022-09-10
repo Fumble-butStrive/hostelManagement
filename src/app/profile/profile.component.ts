@@ -50,7 +50,7 @@ export class ProfileComponent implements OnInit {
 
   updateUserProfile() {   
     if(!this.userProfile.valid) {
-      alert('Please Enter Valiad Value !');
+      alert('Please Enter updateUserProfile !');
       return;
     }
     const userProfileForm = this.userProfile.getRawValue();
@@ -77,7 +77,7 @@ export class ProfileComponent implements OnInit {
 
   onFormSubmit() {
     if (!this.fileUploadForm.get('uploadedImage')!.value) {
-      alert('Please fill valid details!');
+      alert('Please fill onFormSubmit uploadimage');
       return;
     }
 
