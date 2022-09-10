@@ -70,7 +70,6 @@ export class ProfileComponent implements OnInit {
 
     // let fileExtension:string = oldFile.name.split('?')[0].split('.').pop();
     const name = this.user.username + ".jpg";
-
     const file: File = new File([event.target.files[0]], name , {type: 'jpg'});
 
     this.fileUploadForm.get('uploadedImage')!.setValue(file);
@@ -85,7 +84,7 @@ export class ProfileComponent implements OnInit {
     const formData = new FormData();
     formData.append('uploadedImage', this.fileUploadForm.get('uploadedImage')!.value);
 
-    this.http.post<any>('http://localhost:4050/api/users/updateProfilePic', formData).subscribe(response => {
+    this.http.post<any>(`http://localhost:4050/api/users/updateProfilePic`, formData).subscribe(response => {
         alert("Successfully Updated !!");
         if (response.statusCode === 200) {
           // Reset the file input

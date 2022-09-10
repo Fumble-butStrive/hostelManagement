@@ -6,4 +6,5 @@ export interface User {
     email: string;
     newPassword: string;
     role: string;
+    profilePic:  String;
 }
