@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of, Subject, throwError } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { Prices } from '../prices';
 
 @Injectable({
@@ -10,7 +11,8 @@ import { Prices } from '../prices';
 export class HostelDetailService {
 
   private prices$ = new Subject<Prices>();
-  private apiUrl = 'http://localhost:4050/api/';
+  // private apiUrl = 'http://localhost:4050/api/';
+  private apiUrl = environment.apiUrl+'api/';
 
   constructor(private httpClient: HttpClient) {}
 

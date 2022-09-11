@@ -2,13 +2,15 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { of, throwError } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ContactUsService {
 
-  private apiUrl = 'http://localhost:4050/api/contactUs/';
+  private apiUrl = environment.apiUrl+'api/contactUs/';
+  // private apiUrl = 'http://localhost:4050/api/contactUs/';
 
   constructor(private httpClient: HttpClient) { }
 
@@ -39,7 +41,7 @@ export class ContactUsService {
   }
 
   sendReplyMessage(replyMsg: any) {
-    return this.httpClient.post<any>(`http://localhost:4050/api/contactReply/addContactReply`,replyMsg).pipe
+    return this.httpClient.post<any>(`${this.apiUrl}addContactReply`,replyMsg).pipe
     (
       switchMap(({msg}) => {
         return of(msg);
@@ -52,7 +54,7 @@ export class ContactUsService {
   }
 
   replyMessageHistory() {
-    return this.httpClient.get<any>(`http://localhost:4050/api/contactReply/contactReplyHistory`).pipe
+    return this.httpClient.get<any>(`${this.apiUrl}contactReplyHistory`).pipe
     (
       switchMap(({ contactReplyHistory }) => {
         return of(contactReplyHistory);
