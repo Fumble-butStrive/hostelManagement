@@ -1,6 +1,6 @@
 {
     "/api":{
-        "target": "http://localhost:4050",
+        "target": "https://final-project-amber.herokuapp.com/",
         "secure": false,
         "pathRewrite": {"^/api" : ""},
         "changeOrigin": true
