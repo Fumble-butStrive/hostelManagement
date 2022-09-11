@@ -2,6 +2,7 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { EMPTY, of, Subject, throwError } from 'rxjs';
 import { catchError, switchMap } from 'rxjs/operators';
+import { environment } from 'src/environments/environment';
 import { TokenStorageService } from '../token-storage.service';
 import { User } from '../user';
 
@@ -15,7 +16,7 @@ interface UserDto {
 })
 export class AuthService {
   private user$ = new Subject<User>();
-  private apiUrl = 'http://localhost:4050/api/auth/';
+  private apiUrl =  environment.apiUrl+'api/auth/';
 
   constructor(private httpClient: HttpClient, private tokenStorage: TokenStorageService) { }
   
