@@ -5,6 +5,7 @@ import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { User } from '../user';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { ContactUsService } from './contact-us.service';
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'hostel-contact-us',
@@ -13,7 +14,7 @@ import { ContactUsService } from './contact-us.service';
 })
 export class ContactUsComponent implements OnInit {
 
-  private apiUrl = 'http://localhost:4050/api/contactUs/';
+  private apiUrl = environment.apiUrl+'/api/contactUs/';
   user: User;
 
   contactHistory: any = [];

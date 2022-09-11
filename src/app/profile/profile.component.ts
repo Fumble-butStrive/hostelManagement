@@ -4,7 +4,7 @@ import { FormBuilder, FormControl, FormGroup, Validators } from '@angular/forms'
 import { AdminService } from '../admin/admin.service';
 import { AuthService } from '../auth/auth.service';
 import { User } from '../user';
-
+import { environment } from 'src/environments/environment';
 
 @Component({
   selector: 'pm-profile',
@@ -15,6 +15,7 @@ export class ProfileComponent implements OnInit {
 
   user: User;
   selectedFile : File;
+  apiUrl = environment.apiUrl + 'api/users/';
 
   @ViewChild('UploadFileInput', { static: false }) uploadFileInput: ElementRef;
   fileUploadForm: FormGroup;
@@ -29,7 +30,7 @@ export class ProfileComponent implements OnInit {
     password: new FormControl('',[Validators.required])
   });
 
-  constructor(private authService: AuthService, private adminService: AdminService, private http: HttpClient, private formBuilder: FormBuilder) {
+  constructor( private authService: AuthService, private adminService: AdminService, private http: HttpClient, private formBuilder: FormBuilder) {
     this.authService.findMe().subscribe((user) =>
     {
       this.user = user;
@@ -84,7 +85,7 @@ export class ProfileComponent implements OnInit {
     const formData = new FormData();
     formData.append('uploadedImage', this.fileUploadForm.get('uploadedImage')!.value);
 
-    this.http.post<any>(`http://localhost:4050/api/users/updateProfilePic`, formData).subscribe(response => {
+    this.http.post<any>(`${this.apiUrl}updateProfilePic`, formData).subscribe(response => {
         alert("Successfully Updated !!");
         if (response.statusCode === 200) {
           // Reset the file input
